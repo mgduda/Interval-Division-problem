@@ -16,12 +16,24 @@ void divide(const TimeInterval &numerator,
             long &quotient,
             TimeInterval &remainder)
 {
+	quotient = 0;
+	remainder = numerator;
 
 	//
-	// Replace the dummy code below with your own
+	// The simplest algorithm...
 	//
-	quotient = 42;
-	remainder.setInterval(42, 42, 42);
+	while (remainder >= denominator) {
+		remainder -= denominator;
+		quotient++;
+	}
+
+	//
+	// Are there edge cases that aren't handled by the simple algorithm?
+	//
+
+	//
+	// Are there algorithms that can arrive at the answer much more efficiently?
+	//
 }
 
 
@@ -37,8 +49,8 @@ int main(int argc, char **argv)
 	// of interval division
 	//
 
-	numerator.setInterval(365, 0, 0);	// 365 days, 0.0 s
-	denominator.setInterval(0, 1, 0);	// 0 days, 1.0 s
+	numerator.setInterval(500, 0, 0);    // 500 days
+	denominator.setInterval(0, 0, 200000);    // 0.2 seconds
 
 	divide(numerator, denominator, quotient, remainder);
 
