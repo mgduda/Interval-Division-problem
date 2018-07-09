@@ -36,7 +36,7 @@ void TimeInterval::setInterval(long days, long seconds, long u_seconds)
 }
 
 
-TimeInterval TimeInterval::operator+(const TimeInterval &inc)
+TimeInterval TimeInterval::operator+(const TimeInterval &inc) const
 {
 	TimeInterval result;
 
@@ -59,7 +59,7 @@ TimeInterval& TimeInterval::operator+=(const TimeInterval &inc)
 }
 
 
-TimeInterval TimeInterval::operator-(const TimeInterval &dec)
+TimeInterval TimeInterval::operator-(const TimeInterval &dec) const
 {
 	TimeInterval result;
 
@@ -82,7 +82,7 @@ TimeInterval& TimeInterval::operator-=(const TimeInterval &dec)
 }
 
 
-TimeInterval TimeInterval::operator*(long n)
+TimeInterval TimeInterval::operator*(long n) const
 {
 	TimeInterval result;
 
@@ -97,7 +97,7 @@ TimeInterval TimeInterval::operator*(long n)
 }
 
 
-TimeInterval operator*(long n, TimeInterval &t)
+TimeInterval operator*(long n, const TimeInterval &t)
 {
 	return t * n;
 }

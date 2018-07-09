@@ -62,11 +62,11 @@ public:
 	//
 	// Operators
 	//
-	TimeInterval operator+(const TimeInterval &inc);
+	TimeInterval operator+(const TimeInterval &inc) const;
 	TimeInterval& operator+=(const TimeInterval &inc);
-	TimeInterval operator-(const TimeInterval &dec);
+	TimeInterval operator-(const TimeInterval &dec) const;
 	TimeInterval& operator-=(const TimeInterval &dec);
-	TimeInterval operator*(long n);
+	TimeInterval operator*(long n) const;
 	TimeInterval& operator*=(long n);
 	friend bool operator==(const TimeInterval &t1, const TimeInterval &t2);
 	friend bool operator!=(const TimeInterval &t1, const TimeInterval &t2);
@@ -75,7 +75,7 @@ public:
 	friend bool operator>(const TimeInterval &t1, const TimeInterval &t2);
 	friend bool operator>=(const TimeInterval &t1, const TimeInterval &t2);
 	friend std::ostream& operator<<(std::ostream& output, const TimeInterval& p);
-	friend TimeInterval operator*(long n, TimeInterval &t);
+	friend TimeInterval operator*(long n, const TimeInterval &t);
 
 private:
 	long intervalDays;		// Number of days in the interval
